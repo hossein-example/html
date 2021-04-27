@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function blockForms () {
+                if (document.getElementById('exampleMe').style.display=="none") {
+				    document.getElementById('exampleMe').style.display = "block";
+				}	
+                else {
+ 				    document.getElementById('exampleMe').style.display = "none";
+				}	
+            }
+            function showPic (pic) {
+                document.getElementById('largePic').style.backgroundImage = "url('gallery/"+pic+"')";
+            }
+            function selecteds (n) {
+			    var sel = document.getElementsByClassName(n);
+				for (var i = 0; i<sel.length; i++) {
+				   if (sel[i].checked == true) 
+				       sel[i].checked = false;
+					
+					else 
+					    sel.checked = true;
+				    
+				};
+			}	
+        </script>   
+        <style>
+            #exampleMe {
+                display: none;
+            }
+            #largePic{
+                border: 1px solid black;
+                width: 500px;
+                height: 400px;
+            }
+            #oddEvens {
+                margin:0 auto;
+            }
+            body {
+            background-image: url('background-wave.png');
+            background-repeat: no-repeat;
+            background-size: cover !important;
+            font-family: Tahoma;
+            font-size: 12px;
+            font-weight: 700;
+            overflow: hidden;
+            display: flex;
+           
+            }              
+            .signin-button {
+            outline: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            height: 60px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            text-align: center;
+            background-color: #02c8db;
+            box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
+            transition: all 0.5s;
+            }              
+        </style>
+    </head>
+    <body>
+        <a href="javascript:blockForms()">log in</a>
+        <div id="exampleMe">
+            <form action="" method="get">
+			    <input type="button" onclick="" value="click"><br>				
+                <label for="user">username</label><br>
+                <input type="text" id="user" name="user" required="required">
+                <label for="password">password</label><br>
+                <input type="password" id="password" name="password"><br>
+                <input type="submit" value="submit"><br>    
+            </form>
+        </div> <br><br><br><br><br><br><br><br><br><br><br><br>
+        <img onmouseover="showPic('download (1).jfif')" src="gallery/download (1).jfif">
+        <img   onmouseover="showPic('download.jfif')"  src="gallery/download.jfif"> 
+        <div id="largePic"></div><br><br><br><br><br><br>
+		<div id="oddEvens">
+            <form method="get" action="">
+		    <input type="button" onclick="selecteds('odds')" value="select odd">
+			<input type="button" onclick="selecteds('evens')" value="select even"><br>
+			<input type="checkbox" name="name[1]" class="odds">1<br>
+			<input type="checkbox" name="name[2]" class="evens">2<br>
+			<input type="checkbox" name="name[3]" class="odds">3<br>
+			<input type="checkbox" name="name[4]" class="evens">4<br>
+		</form>
+        </div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="login-div">
+            <div class="fields">
+                <form action="" method="post">
+                    <div class="username">
+                        <svg class="svg-icon" veiwbox="0 0 20 20">
+                            <path d="">
+                            </path>
+                        </svg>
+                        <input type="text" id="user" class="user-input" placeholder="Username" name="user" required="required">
+                    </div>
+                    <div class="password">
+                        <svg class="svg-icon" veiwbox="0 0 20 20">
+                            <path d="">
+                            </path>
+                        </svg>
+                        <input type="password" id="password" name="password" class="pass-input" placeholder="Password">
+                    </div>
+                    <button type="submit" id="login" class="signin-button">Login</button>
+                </form>
+        </div>
+		
+		
+		
+		
+		
+		
+		
+    </body>
+</html>
